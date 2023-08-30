@@ -10,7 +10,7 @@ describe('Pagina de login, cenário incorreto', () => {
         cy.getByData('loginPassword').type('11111')
         cy.getByData('loginBtn').click()
         cy.on('window:alert',(t) => {
-            expect(t).to.contains('Invalid user name or password');
+            expect(t).to.equal('Invalid user name or password');
         });
         
         cy.get('.text-danger').contains('User name is required!');
